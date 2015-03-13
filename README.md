@@ -43,7 +43,7 @@ I provide also a PHP form that integrates into Mantis GUI and that can be access
 To install the application and the Mantis form see here: [Installation](../../wiki/Installation)
 
 
-= LICENSE =
+## LICENSE
 
 This library is under the GNU GENERAL PUBLIC LICENSE Version 3. For more information about using/distributing the library see [http://www.gnu.org/copyleft/gpl.html](http://www.gnu.org/copyleft/gpl.html).
 
