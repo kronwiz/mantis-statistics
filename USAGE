@@ -1,0 +1,97 @@
+.. USAGE
+
+============
+Introduction
+============
+
+The script can be used by itself without integration in Mantis, for example to
+produce reports to be sent via email. These are the instructions about how to
+run the program to produce the desired output.
+
+
+=========================
+Script usage instructions
+=========================
+
+If you run the script with the ``-h`` option it prints this brief summary::
+
+  Usage: mantis_statistics.py [options]
+
+  Generate Mantis statistics
+
+  Options:
+    -h, --help            show this help message and exit
+    -u USER, --user=USER  User name, or prefix of user names, or comma separated
+                          list (no spaces allowed)
+    -s, --stats           Display full statistics. Without this flag only
+                          expired bugs are displayed
+    -f FORMAT, --format=FORMAT
+                          Output format: ascii (default), html, htmlstandalone,
+                          csv
+    -t TRANSITION, --transition=TRANSITION
+                          Status transition to be checked; default:
+                          assigned,resolved
+    -d DAYS, --days=DAYS  Time (in days) after which a bug expires; default:
+                          2,4,8
+    -l LINK, --link=LINK  Add mantis link to bug id (only for html expired bug
+                          report). Put Mantis domain in the value, e.g.:
+                          http://eemantis.wki.it
+
+Here follows the detailed description of each option.
+
+-u, --user
+----------
+
+Is the list of user names for which statistics should be generated. If there's
+only one string then the names are searched using the string as a prefix; e.g.:
+"foo" matches "foo" and "foobar". If there are two or more strings separated by
+comma characters they are used as exact user names; e.g.: "foo,bar" matches
+"foo" and "bar" and nothing else.
+
+-s, --stats
+-----------
+
+If specified the output contains the bugs statistics (number of expired and
+total bug per month) in months, otherwise the output is the list of the expired
+bugs.
+
+-f, --format
+------------
+
+Output format. These are the accepted values:
+
+- ascii (default): the output is pure ascii, suitable to be displayed in a
+  terminal;
+- html: the output is html, but only the content of the <body> tag. This output
+  is useful to be included in existing sites, e.g.: Mantis;
+- htmlstandalone: the output is a standalone html file containing also the CSS
+  definitions;
+- csv: the csv format can be easily imported into spreadsheets.
+
+-t, --transition
+----------------
+
+The transition to be checked. A transition is specified using the names of the
+starting and ending status separated by a comma, e.g.: assigned,resolved. The
+allowed names are the ones defined in Mantis, included some custom status you may
+have defined.
+
+-d, --days
+----------
+
+Time in days after which a bug should be considered expired. These are three
+integer values separated by a comma; the default is: 8,4,2. The first value is relative to
+bugs with normal priority, the second to bugs with high priority and the last to
+bugs with urgent priority.
+
+-l, --link
+----------
+
+When the output format is html or htmlstandalone and there's no "-s" flag (so
+the output contains the list of expired bugs) this option instructs the program
+to add a link around every bug id so that clicking it the browser will be
+redirected to the Mantis bug details. The value of this option is the domain
+part of the link or, in other words, the domain name you use to access your
+Mantis instance.
+
+

@@ -1,0 +1,38 @@
+#!/usr/bin/env python
+# -*- coding: utf8 -*-
+
+# General
+# =======
+
+# Mantis database connection
+MYSQL_HOST = "host"
+MYSQL_USER = "user"
+MYSQL_PASSWD = "passwd"
+MYSQL_DB = "db"
+
+# For mantis_email_sender
+# =======================
+
+# How to call the mantis_statistics script
+MANTIS_STATISTICS_COMMAND = "./mantis_statistics.py -u %(user)s -f htmlstandalone -t %(transition)s -l 'http://mantis.domain.com'"
+
+# Mapping between username prefixes and status transitions to be checked
+SECTION_TRANSITIONS = {
+	"xx": [ "assigned,resolved", "resolved,closed" ],
+	"yy": [ "resolved,closed" ]
+}
+
+# Include all username prefixes if equal to None.
+# If you want to include only a subset of prefixes, then INCLUDE_SECTIONS
+# should be a tuple with the prefixes to include.
+INCLUDE_SECTIONS = ( "xx", )
+
+# Mail subject
+MAIL_SUBJECT = "Expired bug report"
+# Mail text introducing the reports
+MAIL_INTRO = "Your expired bugs."
+# Mail address of the sender
+MAIL_SENDER = "mantis@domain.com"
+# Mail SMTP server
+MAIL_SMTP_SERVER = "localhost"
+

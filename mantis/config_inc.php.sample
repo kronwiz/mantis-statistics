@@ -1,0 +1,7 @@
+# new custom menu
+$g_main_menu_custom_options = array( array( "statistics_menu", DEVELOPER, "statistics_page.php" ) );
+
+# new css. Unfortunately this completely replaces Mantis default css, so be sure that you
+# put "@import url('default.css')" at the beginning of statistics.css.
+$g_css_include_file = "css/statistics.css";
+

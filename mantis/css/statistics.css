@@ -1,0 +1,53 @@
+@import url('default.css');
+
+div.project {
+  font-size: 18px;
+  font-weight: bold;
+  margin-top: 20px;
+}
+
+table.statistics
+{
+  border: 1px solid black;
+  border-collapse: collapse;
+}
+table.statistics td {
+  border: 1px solid black;
+  width: 60px;
+  text-align: center;
+}
+table.statistics td.year {
+  font-weight: bold;
+  background-color: lightblue;
+}
+table.statistics td.month {
+  font-style: italic;
+  background-color: lightgreen;
+} 
+table.statistics td.warn {
+  background-color: pink;
+}
+table.statistics td.alert {
+  background-color: red;
+}
+
+table.expired 
+{ 
+  border: 1px solid black;
+  border-collapse: collapse;
+} 
+table.expired td {
+  border: 1px solid black;
+  text-align: left;
+}
+table.expired td.title {
+  font-style: italic;
+  background-color: lightgreen;
+}   
+table.expired td.warn {
+  background-color: pink;
+} 
+table.expired td.alert {
+  background-color: red;
+} 
+

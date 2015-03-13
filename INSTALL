@@ -1,0 +1,51 @@
+.. INSTALL
+
+=========================
+INSTALLATION INSTRUCTIONS
+=========================
+
+mantis_statistics.py
+--------------------
+
+The script ``mantis_statistics.py`` (in the ``bin`` directory) can be put
+wherever you want: it works with Python 2 (I use the version 2.7). It uses only
+modules contained in the standard library except for the MySQLdb module that you
+maybe have to install yourself.
+
+To configure the script you have to change the variables you find at its top to
+make it point to your Mantis database instance.
+
+The script can be run with the ``-h`` option to display a summary of the
+possible options.
+
+
+mantis directory
+----------------
+
+The content of the ``mantis`` directory should be put in the directory where you
+installed your Mantis instance. In detail:
+
+- ``statistics_page.php`` is the form that invokes the ``mantis_statistics.py``
+  script;
+- ``config_inc.php.sample`` contains the sample configuration that you have to
+  add to your ``config_inc.php`` file;
+- ``statistics.css`` (in the ``css`` directory) contains the CSS class
+  definitions needed by the HTML output: you should copy it in the ``css``
+  directory of you Mantis installation.
+
+
+statistics_page.php
+-------------------
+
+This form works out of the box provided that you update the
+``mantis_statistics.py`` path in the ``$command`` variable to reflect the
+position where you installed it.
+
+Obviously you are free to customize the form as you like.
+
+
+config_inc.php.sample
+---------------------
+
+Shows how to add a custom menu and a custom CSS file to Mantis.
+
